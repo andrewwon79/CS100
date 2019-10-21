@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include "base.hpp"
+#include "Add.hpp"
+#include "op.hpp"
+#include "Sub.hpp"
+#include "Rand.hpp"
+#include "Pow.hpp"
+#include "Div.hpp"
+#include "Mult.hpp"
+using namespace std;
+int main() {
+    // This is a very basic main, and being able to correctly execute this main
+    // does not constitute a completed lab. Make sure you write unit tests for
+    // all the classes that you create (and can be instantiated) in this lab
+//    Base* three = new Op(3);
+//    Base* seven = new Op(7);
+//    Base* four = new Op(4);
+//    Base* two = new Op(2);
+//    Base* mult = new Mult(seven, four);
+//    Base* add = new Add(three, mult);
+//    Base* minus = new Sub(add, two);
+//
+//    std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
+    Base* three=new Op(3);
+    Base* four=new Op(4);
+    Base* five=new Op(5);
+    Base* six=new Op(6);
+    Base* Subtract= new Sub(six,four);
+    Base* Add1=new Add(Subtract,five);
+    Base* Addition=new Add(Add1,three);
+    Base* Mult1=new Mult(six,four);
+    Base* Div1=new Div(Mult1,four);
+    Base* Pow1=new Pow(Div1,three);
+    cout<<Addition->evaluate()<<endl;
+    cout<<Div1->evaluate()<<endl;
+    cout<<Pow1->evaluate()<<endl;
+    return 0;
+}
+
