@@ -81,6 +81,18 @@ TEST(Powtest, expect_TwoSixteen) {
     EXPECT_EQ("6.000000**3.000000",Power->stringify());
 }
 
+TEST(Strings_test, expect_LargeString) {
+    Base* three=new Op(3);
+    Base* twopointfive=new Op(2.5);
+    Base* four=new Op(4);
+    Base* five=new Op(5);
+    Base* six=new Op(6);
+    Base* ninety=new Op(90);
+    Base* Power=new Pow(six,three);
+    Base* Subtract=new Sub(Power,ninety);
+    Base* Addition=new Add(Subtract,five);
+    EXPECT_EQ("6.000000**3.000000-90.000000+5.000000",Addition->stringify());
+}
 
 
 
